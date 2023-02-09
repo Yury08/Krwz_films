@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+
+{% block content %}
+    <div class="intro" id="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">KRWZ</h1>
+                <p class="intro__text">online movie</p>
+                <button class="intro__button" href="#">
+                    <a href="#" class="intro__button_text">Смотреть больше</a>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h1 class="section__header_title">Подборки фильмов и сериалов</h1>
+                <a href="https://kino.is/447">Смотреть фильм</a>
+            <div class="section__inner">
+            </div>
+                <h3 class="section__title">Test</h3>
+                <div class="section__slider">
+                    <div class="card">
+                        <img src="" alt="img">
+                        <h6 class="card__title"></h6>
+                        <span class="rating"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

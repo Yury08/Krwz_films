@@ -1,0 +1,61 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/62b48361cd.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/62b48361cd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo"><a href="{% url 'films:main' %}">KRWZ</a></div>
+
+                <nav class="nav" id="nav">
+                    <a href="#" class="nav__item">Жанры</a>
+                    <a href="#" class="nav__item">Фильмы</a>
+                    <a href="#" class="nav__item">Сериалы</a>
+                    <a href="#" class="nav__item language" id="language">
+                        <i class="fa-solid fa-globe"></i> en
+                    </a>
+                    <a href="#" class="nav__item search" id="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </nav>
+
+                <nav class="nav nav__sec">
+                    <a href="{% url 'users:reg' %}" class="nav__btn">Зарегистрироваться</a>
+                    <a href="{% url 'users:user' %}" class="nav__btn">Авторизоваться</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+<script src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+<script>
+   VANTA.GLOBE({
+        el: "#intro",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x5ab5bb,
+        size: 0.70,
+        backgroundColor: 0x323237
+    })
+</script>
+<script src="https://kinobd.ru/js/player_.js"></script>
+</body>
+</html>

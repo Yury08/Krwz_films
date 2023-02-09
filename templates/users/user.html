@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="section__register-button">Войти</button>
+</form>
+{% endblock %}
