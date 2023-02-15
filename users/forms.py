@@ -1,31 +1,48 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import (
+    UserCreationForm,
+    AuthenticationForm,
+    UsernameField
+)
 from .models import Profile
+
+
+class UserLoginForm(forms.Form):
+    username = forms.CharField(
+        label='',
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'input', 'id': 'firstname'})
+    )
+    password = forms.CharField(
+        label='',
+        required=True,
+        widget=forms.PasswordInput(attrs={'class': 'input', 'id': 'lastname'})
+    )
 
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(
-        label='Введите email',
+        label='',
         required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите email'})
+        widget=forms.TextInput(attrs={'class': 'form-control'})
     )
     username = forms.CharField(
-        label='Введите логин',
+        label='',
         required=True,
         help_text='Нельзя вводить символы: @, /, _',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите логин'})
+        widget=forms.TextInput(attrs={'class': 'form-control'})
     )
     password1 = forms.CharField(
-        label='Введите пароль',
+        label='',
         required=True,
         help_text='Пароль не должен быть маленьким и простым',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Введите пароль'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
     password2 = forms.CharField(
-        label='Подтвердите пароль',
+        label='',
         required=True,
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Подтвердите пароль'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
 
     class Meta:
